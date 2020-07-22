@@ -12,7 +12,7 @@
         <app-apperiel></app-apperiel>
         <app-apperiel></app-apperiel>
       </ul>
-      <button class="btn btn-success" disabled>Tout allumer</button>
+      <button class="btn btn-success" [disabled]="!isAuth">Tout allume</button>
     </div>
   </div>
 </div>
