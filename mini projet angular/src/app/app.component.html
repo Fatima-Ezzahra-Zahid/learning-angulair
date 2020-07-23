@@ -8,9 +8,9 @@
     <div class="col-xs-12">
       <h2>Mes appareils</h2>
       <ul class="list-group">
-        <app-apperiel></app-apperiel>
-        <app-apperiel></app-apperiel>
-        <app-apperiel></app-apperiel>
+        <app-apperiel [appareilName]= "appareilOne" [appareilStatus]="'éteint'"></app-apperiel>
+        <app-apperiel [appareilName]= "appareilTwo"  [appareilStatus]="'allumé'"></app-apperiel>
+        <app-apperiel [appareilName]="appareilThree"  [appareilStatus]="'éteint'"></app-apperiel>
       </ul>
       <button class="btn btn-success" 
       [disabled]="!isAuth" 
