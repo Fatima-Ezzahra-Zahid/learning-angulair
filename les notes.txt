@@ -1,0 +1,32 @@
+// Crée l'événement
+var event = document.createEvent('Event');
+
+// Nomme l'événement 'build'.
+event.initEvent('build', true, true);
+
+// Écoute l'événement.
+elem.addEventListener('build', function (e) {
+  // e.target correspond à elem
+}, false);
+
+// target peut être n'importe quel Element ou autre EventTarget.
+elem.dispatchEvent(event);
+
+//Le déclenchement d'événements intégrés//
+
+function simulateClick() {
+  var event = new MouseEvent('click', {
+    'view': window,
+    'bubbles': true,
+    'cancelable': true
+  });
+  var cb = document.getElementById('checkbox'); 
+  var canceled = !cb.dispatchEvent(event);
+  if (canceled) {
+    //Un gestionnaire appelé preventDefault. 
+    alert("canceled");
+  } else {
+    //Aucun gestionnaires appelé preventDefault.
+    alert("not canceled");
+  }
+}
